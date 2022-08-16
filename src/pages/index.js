@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Layout } from '../../src/components/Layout/Layout';
+import { Dots } from '../components/Dots/Dots';
 import { Typewriter } from '../components/Typewriter/Typewriter';
 
 const IndexPage = () => {
@@ -7,7 +8,8 @@ const IndexPage = () => {
     <Layout>
       <div data-testid='indexPage'>
         <h1>Peter Mada</h1>
-        <Typewriter dynamicText='ABCDEFGHIJ' />
+        <Typewriter dynamicText='Developer' />
+        <Dots />
       </div>
     </Layout>
   );
