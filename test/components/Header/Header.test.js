@@ -7,4 +7,11 @@ describe('Header', () => {
     render(<Header />);
     expect(screen.getByTestId('header')).toBeInTheDocument();
   });
+
+  it('display menu button', () => {
+    render(<Header />);
+    expect(screen.getByRole('button').textContent).toEqual(
+      'Open sidebar menu'
+    );
+  });
 });
