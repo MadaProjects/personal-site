@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { Layout } from '../../src/components/Layout/Layout';
 import { Dots } from '../components/Dots/Dots';
 import { Typewriter } from '../components/Typewriter/Typewriter';
@@ -16,7 +17,18 @@ const IndexPage = () => {
             data-drawer-target='drawer-navigation'
             data-drawer-toggle='drawer-navigation'
             aria-controls='drawer-navigation'>
-            Show navigation
+            <span className='sr-only'>Open main menu</span>
+            <svg
+              aria-hidden='true'
+              className='w-6 h-6'
+              fill='currentColor'
+              viewBox='0 0 20 20'
+              xmlns='http://www.w3.org/2000/svg'>
+              <path
+                fillRule='evenodd'
+                d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
+                clipRule='evenodd'></path>
+            </svg>
           </button>
         </div>
         <Dots />

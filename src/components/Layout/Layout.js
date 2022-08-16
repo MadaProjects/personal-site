@@ -1,15 +1,21 @@
 import * as React from 'react';
+import { useEffect } from 'react';
+
 import '@fontsource/anonymous-pro';
+
 import '../../styles/global.css';
 import * as layoutStyles from './Layout.module.scss';
-import 'flowbite';
 
 export const Layout = ({ children }) => {
+  useEffect(() => {
+    import('flowbite');
+  }, []);
+
   return (
     <main>
       <div
         id='drawer-navigation'
-        className='fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800'
+        className='fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800 transition-transform left-0 top-0 -translate-x-full'
         tabIndex='-1'
         aria-labelledby='drawer-navigation-label'>
         <h5
