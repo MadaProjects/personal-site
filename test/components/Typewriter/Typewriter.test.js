@@ -25,9 +25,9 @@ describe('Typewriter', () => {
     expect(screen.getByTestId('typewriter').textContent).toEqual('');
   });
 
-  it('render dynamic text', () => {
+  it('render dynamic text', async () => {
     const text = 'Text';
     render(<Typewriter dynamicText={text} />);
-    expect(screen.getByText(text)).toBeInTheDocument();
+    expect(await screen.findByText(text)).toBeInTheDocument();
   });
 });
