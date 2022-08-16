@@ -20,8 +20,14 @@ describe('Typewriter', () => {
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
-  it('does not render static text on missing props', () => {
+  it('render empty component on missing props', () => {
     render(<Typewriter />);
     expect(screen.getByTestId('typewriter').textContent).toEqual('');
+  });
+
+  it('render dynamic text', () => {
+    const text = 'Text';
+    render(<Typewriter dynamicText={text} />);
+    expect(screen.getByText(text)).toBeInTheDocument();
   });
 });
