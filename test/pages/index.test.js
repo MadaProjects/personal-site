@@ -7,4 +7,11 @@ describe('IndexPage', () => {
     render(<IndexPage />);
     expect(screen.getByTestId('indexPage')).toBeInTheDocument();
   });
+
+  it('render name', () => {
+    render(<IndexPage />);
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toEqual(
+      'Peter Mada'
+    );
+  });
 });
