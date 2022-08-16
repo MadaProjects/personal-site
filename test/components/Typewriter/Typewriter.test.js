@@ -19,4 +19,9 @@ describe('Typewriter', () => {
     render(<Typewriter staticText={text} />);
     expect(screen.getByText(text)).toBeInTheDocument();
   });
+
+  it('does not render static text on missing props', () => {
+    render(<Typewriter />);
+    expect(screen.getByTestId('typewriter').textContent).toEqual('');
+  });
 });
