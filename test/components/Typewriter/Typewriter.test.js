@@ -13,4 +13,10 @@ describe('Typewriter', () => {
     render(<Typewriter staticText={text} />);
     expect(screen.getByText(text)).toBeInTheDocument();
   });
+
+  it('render diferent static text from props', () => {
+    const text = 'Lorem second ipsum';
+    render(<Typewriter staticText={text} />);
+    expect(screen.getByText(text)).toBeInTheDocument();
+  });
 });

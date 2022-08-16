@@ -1,3 +1,3 @@
-export const Typewriter = () => {
-  return <div data-testid='typewriter'>Lorem ipsum</div>;
+export const Typewriter = ({ staticText }) => {
+  return <div data-testid='typewriter'>{staticText}</div>;
 };
