@@ -7,4 +7,10 @@ describe('Typewriter', () => {
     render(<Typewriter />);
     expect(screen.getByTestId('typewriter')).toBeInTheDocument();
   });
+
+  it('render static text from props', () => {
+    const text = 'Lorem ipsum';
+    render(<Typewriter staticText={text} />);
+    expect(screen.getByText(text)).toBeInTheDocument();
+  });
 });
