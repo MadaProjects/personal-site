@@ -2,6 +2,19 @@ import * as React from 'react';
 import './Dots.scss';
 
 export const Dots = () => {
+  const attributeElements = {
+    'sodipodi:docname': '18199653.eps',
+    'xmlns:inkscape': 'http://www.inkscape.org/namespaces/inkscape',
+    'xmlns:sodipodi': 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
+    xmlns: 'http://www.w3.org/2000/svg',
+    'xmlns:svg': 'http://www.w3.org/2000/svg',
+  };
+
+  const attributeElementsForG = {
+    'inkscape:groupmode': 'layer',
+    'inkscape:label': 'ink_ext_XXXXXX',
+  };
+
   return (
     <svg
       version='1.1'
@@ -10,17 +23,12 @@ export const Dots = () => {
       width='1000'
       height='750'
       viewBox='0 0 53.333332 40'
-      sodipodiDocname='18199653.eps'
-      xmlnsInkscape='http://www.inkscape.org/namespaces/inkscape'
-      xmlnsSodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd'
-      xmlns='http://www.w3.org/2000/svg'
-      xmlnsSvg='http://www.w3.org/2000/svg'>
+      {...attributeElements}>
       <defs id='defs6' />
       <g
         id='g8'
-        inkscapeGroupmode='layer'
-        inkscapeLabel='ink_ext_XXXXXX'
-        transform='matrix(1.3333333,0,0,-1.3333333,0,40)'>
+        transform='matrix(1.3333333,0,0,-1.3333333,0,40)'
+        {...attributeElementsForG}>
         <g id='g10' transform='scale(0.1)'>
           <path
             d='M 400.004,0.00390625 H 0 V 300 H 400.004 V 0.00390625'
