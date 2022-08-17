@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const Header = () => {
   return (
-    <div>
+    <div className=''>
       <header
         data-testid='header'
         className='container mx-auto fixed top-0 left-0 right-0 py-4'>
@@ -21,6 +21,7 @@ export const Header = () => {
               viewBox='0 0 20 20'
               xmlns='http://www.w3.org/2000/svg'>
               <path
+                fill='#bcfd4c'
                 fillRule='evenodd'
                 d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
                 clipRule='evenodd'></path>

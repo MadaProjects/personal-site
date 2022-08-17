@@ -35,9 +35,11 @@ export const Typewriter = ({ staticText, dynamicText }) => {
 
   return (
     <div data-testid='typewriter'>
-      <div className='wrap text-white'>
-        {staticText ? <p className=''>{staticText}&nbsp;</p> : ''}
-        <p className='dyanicText'>{typing}</p>
+      <div className='wrap text-white text-lg flex justify-start	justify-items-start'>
+        {staticText ? <p>{staticText}&nbsp;</p> : ''}
+        <div>
+          <p className='dyanicText'>{typing}</p>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
 .dyanicText {
   display: inline;
   overflow: hidden;
-  border-right: 0.15em solid black;
+  border-right: 0.15em solid #bcfd4c;
   white-space: nowrap;
   margin: 0;
   letter-spacing: 0.15em;
@@ -15,12 +15,12 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 2px;
+    bottom: -5px;
     left: 0;
     right: 0;
     width: 100%;
     background-color: #bcfd4c;
-    height: 1px;
+    height: 2px;
   }
 }
 
@@ -39,6 +39,6 @@
     border-color: transparent;
   }
   50% {
-    border-color: black;
+    border-color: #bcfd4c;
   }
 }
