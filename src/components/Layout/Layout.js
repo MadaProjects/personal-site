@@ -9,6 +9,7 @@ import { Header } from '../Header/Header';
 
 export const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     import('flowbite');
@@ -28,6 +29,12 @@ export const Layout = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (localStorage.paused) {
+      setPaused(true);
+    }
+  }, []);
+
   const handleSetDarkMode = () => {
     if (darkMode) {
       localStorage.setItem('darkModePeterMada', false);
@@ -38,9 +45,26 @@ export const Layout = ({ children }) => {
     }
   };
 
+  const handlePauseClick = () => {
+    if (paused) {
+      localStorage.setItem('paused', false);
+      setPaused(false);
+    } else {
+      localStorage.setItem('paused', true);
+      setPaused(true);
+    }
+  };
+
+  const darkModeClass = darkMode ? 'dark bg-primary' : 'bg-white';
+  const pausedClass = paused ? 'paused' : '';
+  const mainClass = `${darkModeClass} ${pausedClass}`;
+
   return (
-    <main className={darkMode ? 'dark bg-primary' : 'bg-white'}>
-      <Header onDarkModeClick={handleSetDarkMode} />
+    <main className={mainClass}>
+      <Header
+        onDarkModeClick={handleSetDarkMode}
+        onPauseClick={handlePauseClick}
+      />
       {children}
     </main>
   );

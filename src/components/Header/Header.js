@@ -2,29 +2,13 @@ import * as React from 'react';
 import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
 
-export const Header = ({ onDarkModeClick }) => {
+export const Header = ({ onDarkModeClick, onPauseClick }) => {
   return (
     <div className='z-40 relative'>
       <header
         data-testid='header'
         className='header container mx-auto fixed top-0 left-0 right-0 py-4'>
         <div className='flex justify-end'>
-          <button
-            className={`other-button text-white hover:bg-green focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-green focus:outline-none dark:focus:ring-green`}>
-            <span className='sr-only'>Pause animation</span>
-            <svg
-              className='w-6 h-6'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-              xmlns='http://www.w3.org/2000/svg'>
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z'></path>
-            </svg>
-          </button>
           <button
             onClick={onDarkModeClick}
             className={`other-button text-white hover:bg-green focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-green focus:outline-none dark:focus:ring-green`}>

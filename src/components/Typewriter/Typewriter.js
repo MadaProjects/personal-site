@@ -4,11 +4,20 @@ import './Typewriter.scss';
 
 export const Typewriter = ({ staticText, dynamicText }) => {
   const [typing, setTyping] = useState('');
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    console.log(localStorage.paused);
+    if (localStorage.paused) {
+      setPaused(true);
+    }
+  }, []);
+
   useEffect(() => {
     let j = 0;
     let i = -1;
     let k = dynamicText[j] ? dynamicText[j].length : 0;
-    if (dynamicText) {
+    if (dynamicText && !paused) {
       const interval = setInterval(() => {
         i++;
         if (i <= dynamicText[j].length) {
@@ -37,6 +46,8 @@ export const Typewriter = ({ staticText, dynamicText }) => {
         }
       }, 75);
       return () => clearInterval(interval);
+    } else {
+      setTyping('FALSE TIP');
     }
   }, [dynamicText]);
 
