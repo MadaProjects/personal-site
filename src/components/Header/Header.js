@@ -1,9 +1,20 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Link } from 'gatsby';
 import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
 
 export const Header = ({ onDarkModeClick, onPauseClick }) => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const handleMenuClick = () => {
+    if (openDrawer) {
+      setOpenDrawer(false);
+    } else {
+      setOpenDrawer(true);
+    }
+  };
+
   return (
     <div className='z-40 relative'>
       <header
@@ -44,7 +55,8 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             type='button'
             data-drawer-target='drawer-navigation'
             data-drawer-toggle='drawer-navigation'
-            aria-controls='drawer-navigation'>
+            aria-controls='drawer-navigation'
+            onClick={handleMenuClick}>
             <span className='sr-only'>Open sidebar menu</span>
             <svg
               aria-hidden='true'
@@ -65,14 +77,17 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
       <div
         id='drawer-navigation'
         data-testid='drawer'
-        className='fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800 transition-transform left-0 top-0 -translate-x-full'
+        className={`${
+          openDrawer ? 'transform-none' : '-translate-x-full'
+        } fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-primary transition-transform left-0 top-0 `}
         tabIndex='-1'
         aria-labelledby='drawer-navigation-label'>
         <button
           type='button'
           data-drawer-dismiss='drawer-navigation'
           aria-controls='drawer-navigation'
-          className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'>
+          onClick={handleMenuClick}
+          className='text-gray-400 bg-transparent hover:bg-green hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'>
           <svg
             aria-hidden='true'
             className='w-5 h-5'
@@ -88,7 +103,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
         <div className='py-4 overflow-y-auto'>
           <div className='flex flex-col items-center mb-1'>
             <img
-              className='p-1 w-30 h-30 mb-3 rounded-full ring-2 ring-gray-300 dark:ring-gray-500'
+              className='p-1 w-30 h-30 mb-3 rounded-full ring-2 ring-green dark:ring-white'
               src={myImage}
               alt='Bordered avatar'
             />
@@ -98,7 +113,9 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             </span>
           </div>
           <div className={`social flex items-center justify-center mb-5`}>
-            <a href='mailto:madapeterr@gmail.com' className='mx-1'>
+            <a
+              href='mailto:madapeterr@gmail.com'
+              className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -112,7 +129,9 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                   d='M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207'></path>
               </svg>
             </a>
-            <a href='tel:+421911222123' className='mx-1'>
+            <a
+              href='tel:+421911222123'
+              className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -131,7 +150,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='/'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -151,7 +170,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='about-me'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -171,7 +190,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='education'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -192,7 +211,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='resume'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -212,7 +231,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='portfolio'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -232,7 +251,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='services'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -252,7 +271,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <li>
               <Link
                 to='contact'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
@@ -271,6 +290,11 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
           </ul>
         </div>
       </div>
+      <div
+        onClick={handleMenuClick}
+        className={`${
+          openDrawer ? 'block' : 'hidden'
+        } bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30`}></div>
     </div>
   );
 };
