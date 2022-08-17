@@ -16,7 +16,7 @@ const IndexPage = () => {
     <Layout>
       <div
         data-testid='indexPage'
-        className='indexWrap relative -z-10 overflow-hidden'>
+        className='indexWrap relative  overflow-hidden'>
         <div className='flex justify-center  h-screen 	'>
           <div className='mt-40 2xl:mt-60'>
             <h1 className='name text-5xl md:text-7xl md:tracking-wider font-bold text-white mb-3'>

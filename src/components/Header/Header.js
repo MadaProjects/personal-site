@@ -4,7 +4,7 @@ import myImage from '../../images/peto.jpg';
 
 export const Header = ({ onDarkModeClick }) => {
   return (
-    <div className=''>
+    <div className='z-10 relative'>
       <header
         data-testid='header'
         className='container mx-auto fixed top-0 left-0 right-0 py-4'>

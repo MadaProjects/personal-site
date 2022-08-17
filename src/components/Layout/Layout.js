@@ -15,14 +15,20 @@ export const Layout = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(localStorage.getItem('darkModePeterMada'));
-    if (localStorage.getItem('darkModePeterMada')) {
-      setDarkMode(localStorage.getItem('darkModePeterMada'));
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      localStorage.setItem('darkModePeterMada', true);
+      setDarkMode(true);
+    } else {
+      localStorage.setItem('darkModePeterMada', false);
+      setDarkMode(false);
     }
   }, []);
 
   const handleSetDarkMode = () => {
-    console.log('test');
     if (darkMode) {
       localStorage.setItem('darkModePeterMada', false);
       setDarkMode(false);
@@ -33,7 +39,7 @@ export const Layout = ({ children }) => {
   };
 
   return (
-    <main className={darkMode ? 'dark' : ''}>
+    <main className={darkMode ? 'dark bg-primary' : 'bg-white'}>
       <Header onDarkModeClick={handleSetDarkMode} />
       {children}
     </main>
