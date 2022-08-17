@@ -1,4 +1,5 @@
-.header {
+.header,
+.social {
   svg {
     stroke: #6e6e6e;
   }
@@ -11,6 +12,19 @@
 }
 
 .dark {
+  .social {
+    svg {
+      stroke: white;
+    }
+
+    a {
+      &:hover {
+        svg {
+          stroke: #bcfd4c;
+        }
+      }
+    }
+  }
   .header {
     .other-button {
       svg {
