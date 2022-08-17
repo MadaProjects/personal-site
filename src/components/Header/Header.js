@@ -1,17 +1,17 @@
 import * as React from 'react';
-import * as layoutStyles from './Header.module.scss';
+import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
 
 export const Header = ({ onDarkModeClick }) => {
   return (
-    <div className='z-10 relative'>
+    <div className='z-40 relative'>
       <header
         data-testid='header'
-        className='container mx-auto fixed top-0 left-0 right-0 py-4'>
+        className='header container mx-auto fixed top-0 left-0 right-0 py-4'>
         <div className='flex justify-end'>
           <button
-            className={`hover:bg-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800`}>
-            <span className='sr-only'>Day mode</span>
+            className={`other-button text-white hover:bg-green focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-green focus:outline-none dark:focus:ring-green`}>
+            <span className='sr-only'>Pause animation</span>
             <svg
               className='w-6 h-6'
               fill='none'
@@ -27,10 +27,10 @@ export const Header = ({ onDarkModeClick }) => {
           </button>
           <button
             onClick={onDarkModeClick}
-            className={`hover:bg-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800`}>
+            className={`other-button text-white hover:bg-green focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-green focus:outline-none dark:focus:ring-green`}>
             <span className='sr-only'>Dark mode</span>
             <svg
-              className='w-6 h-6'
+              className='w-6 h-6 hidden dark:block'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -41,9 +41,21 @@ export const Header = ({ onDarkModeClick }) => {
                 strokeWidth='2'
                 d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'></path>
             </svg>
+            <svg
+              className='w-6 h-6 dark:hidden'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'></path>
+            </svg>
           </button>
           <button
-            className={`${layoutStyles.drawerButton} text-white hover:bg-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800`}
+            className={`${headerStyles.drawerButton} drawer-button text-white hover:bg-green focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-green focus:outline-none dark:focus:ring-green`}
             type='button'
             data-drawer-target='drawer-navigation'
             data-drawer-toggle='drawer-navigation'
@@ -56,7 +68,7 @@ export const Header = ({ onDarkModeClick }) => {
               viewBox='0 0 20 20'
               xmlns='http://www.w3.org/2000/svg'>
               <path
-                fill='#bcfd4c'
+                fill=''
                 fillRule='evenodd'
                 d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
                 clipRule='evenodd'></path>

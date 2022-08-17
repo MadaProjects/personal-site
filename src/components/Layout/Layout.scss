@@ -1,0 +1,41 @@
+.header {
+  svg {
+    stroke: #6e6e6e;
+  }
+
+  .drawer-button {
+    svg {
+      fill: #6e6e6e;
+    }
+  }
+}
+
+.dark {
+  .header {
+    .other-button {
+      svg {
+        stroke: white;
+      }
+
+      &:hover {
+        svg {
+          stroke: #6e6e6e;
+        }
+      }
+    }
+
+    .drawer-button {
+      svg {
+        fill: white;
+        stroke: white;
+      }
+
+      &:hover {
+        svg {
+          stroke: #6e6e6e;
+          fill: #6e6e6e;
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import '@fontsource/anonymous-pro';
 
 import '../../styles/global.css';
-import * as layoutStyles from './Layout.module.scss';
+import './Layout.scss';
 import { Header } from '../Header/Header';
 
 export const Layout = ({ children }) => {
