@@ -1,2 +1,34 @@
 .indexWrap {
 }
+
+.name {
+  line-height: 0.7;
+}
+
+.fallingLetter {
+  display: inline-block;
+  transform-origin: bottom left;
+  animation: fallingLetter 10s 10s infinite ease-in-out;
+}
+
+@keyframes fallingLetter {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(65deg);
+  }
+
+  40% {
+    transform: rotate(65deg);
+  }
+
+  45% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

@@ -19,8 +19,8 @@ const IndexPage = () => {
         className='indexWrap relative -z-10 overflow-hidden'>
         <div className='flex justify-center  h-screen 	'>
           <div className='mt-40 2xl:mt-60'>
-            <h1 className='text-5xl md:text-7xl md:tracking-wider font-bold text-white mb-3'>
-              Peter Mada
+            <h1 className='name text-5xl md:text-7xl md:tracking-wider font-bold text-white mb-3'>
+              Peter Mad<span className='fallingLetter'>a</span>
             </h1>
             <Typewriter staticText="I'm" dynamicText={positions} />
           </div>

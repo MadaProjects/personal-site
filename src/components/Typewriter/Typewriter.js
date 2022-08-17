@@ -30,7 +30,7 @@ export const Typewriter = ({ staticText, dynamicText }) => {
 
             return;
           }
-          console.log(k);
+
           setTyping((typing) => {
             return dynamicText[j].slice(0, k);
           });
