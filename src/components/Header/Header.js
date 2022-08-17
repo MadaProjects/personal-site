@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
 
@@ -92,12 +93,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               alt='Bordered avatar'
             />
 
-            <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
+            <span className='self-center text-xl font-semibold whitespace-nowrap text-primary dark:text-white'>
               Peter Mada
             </span>
           </div>
-          <div className='flex items-center justify-center mb-5 '>
-            <a href='' className='mx-1'>
+          <div className={`social flex items-center justify-center mb-5`}>
+            <a href='mailto:madapeterr@gmail.com' className='mx-1'>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -111,7 +112,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                   d='M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207'></path>
               </svg>
             </a>
-            <a href='' className='mx-1'>
+            <a href='tel:+421911222123' className='mx-1'>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -128,8 +129,8 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
           </div>
           <ul className='space-y-2'>
             <li>
-              <a
-                href='#'
+              <Link
+                to='/'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -144,12 +145,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
                 </svg>
                 <span className='ml-3'>Home</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href='#'
+              <Link
+                to='about-me'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -164,12 +165,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'></path>
                 </svg>
                 <span className='ml-3'>About me</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href='#'
+              <Link
+                to='education'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -186,11 +187,11 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222'></path>
                 </svg>
                 <span className='ml-3'>Education</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='#'
+              <Link
+                to='resume'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -205,12 +206,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path>
                 </svg>
                 <span className='ml-3'>Resume</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href='#'
+              <Link
+                to='portfolio'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -225,12 +226,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10'></path>
                 </svg>
                 <span className='ml-3'>Portfolio</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href='#'
+              <Link
+                to='services'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -245,12 +246,12 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01'></path>
                 </svg>
                 <span className='ml-3'>Services</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href='#'
+              <Link
+                to='contact'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -265,7 +266,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'></path>
                 </svg>
                 <span className='ml-3'>Contact</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
