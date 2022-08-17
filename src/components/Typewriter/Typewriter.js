@@ -4,38 +4,45 @@ import './Typewriter.scss';
 
 export const Typewriter = ({ staticText, dynamicText }) => {
   const [typing, setTyping] = useState('');
-
   useEffect(() => {
+    let j = 0;
     let i = -1;
-    let k = dynamicText ? dynamicText.length : 0;
+    let k = dynamicText[j] ? dynamicText[j].length : 0;
     if (dynamicText) {
       const interval = setInterval(() => {
         i++;
-        if (i <= dynamicText.length) {
+        if (i <= dynamicText[j].length) {
           setTyping((typing) => {
-            return dynamicText.slice(0, i);
+            return dynamicText[j].slice(0, i);
           });
         }
 
-        if (i > dynamicText.length + 50) {
+        if (i > dynamicText[j].length + 50) {
           k--;
           if (k < 0) {
+            j++;
+            if (j >= dynamicText.length) {
+              j = 0;
+            }
+
             i = -1;
-            k = dynamicText.length;
+            k = dynamicText[j].length;
+
             return;
           }
+          console.log(k);
           setTyping((typing) => {
-            return dynamicText.slice(0, k);
+            return dynamicText[j].slice(0, k);
           });
         }
-      }, 100);
+      }, 75);
       return () => clearInterval(interval);
     }
   }, [dynamicText]);
 
   return (
     <div data-testid='typewriter'>
-      <div className='wrap text-white text-lg flex justify-start	justify-items-start'>
+      <div className='wrap text-white text-base md:text-xl flex justify-start	justify-items-start'>
         {staticText ? <p>{staticText}&nbsp;</p> : ''}
         <div>
           <p className='dyanicText'>{typing}</p>

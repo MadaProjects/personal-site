@@ -9,6 +9,7 @@ module.exports = {
       blue: '#1fb6ff',
       purple: '#7e5bef',
       pink: '#ff49db',
+      primary: '#bcfd4c',
     },
     screens: {
       sm: '640px',
