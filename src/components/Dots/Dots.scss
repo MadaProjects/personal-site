@@ -2,8 +2,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  top: 0;
+  bottom: -5rem;
   width: 100%;
   height: auto;
   z-index: -100;
@@ -17,24 +16,24 @@
 }
 
 .svgPath {
-  fill: black;
+  fill: #6e6e6e;
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: none;
 }
 
 .svgPathRandom-1 {
-  animation: dotsColor 1s alternate infinite;
+  animation: dotsColor 0.5s alternate infinite;
 }
 
 .svgPathRandom-2 {
-  animation: dotsColor2 1s alternate infinite;
+  animation: dotsColor2 1.5s alternate infinite;
 }
 .svgPathRandom-3 {
-  animation: dotsColor3 1s alternate infinite;
+  animation: dotsColor3 2s alternate infinite;
 }
 .svgPathRandom-4 {
-  animation: dotsColor4 1s alternate infinite;
+  animation: dotsColor4 2.5s alternate infinite;
 }
 .svgPathRandom-5 {
   animation: dotsColor5 1s alternate infinite;
@@ -42,50 +41,50 @@
 
 @keyframes dotsColor1 {
   from {
-    fill: black;
+    fill: white;
   }
 
   to {
-    fill: blue;
+    fill: #bcfd4c;
   }
 }
 
 @keyframes dotsColor2 {
   from {
-    fill: black;
+    fill: white;
   }
 
   to {
-    fill: green;
+    fill: #bcfd4c;
   }
 }
 
 @keyframes dotsColor3 {
   from {
-    fill: black;
+    fill: white;
   }
 
   to {
-    fill: yellow;
+    fill: #6e6e6e;
   }
 }
 
 @keyframes dotsColor4 {
   from {
-    fill: black;
+    fill: white;
   }
 
   to {
-    fill: orange;
+    fill: #6e6e6e;
   }
 }
 
 @keyframes dotsColor5 {
   from {
-    fill: black;
+    fill: white;
   }
 
   to {
-    fill: saddlebrown;
+    fill: #6e6e6e;
   }
 }

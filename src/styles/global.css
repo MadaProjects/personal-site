@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Anonymous Pro', monospace;
+  overflow-y: hidden;
+  background-color: #6e6e6e;
+}
+
 /*
 * {
   box-sizing: border-box;
@@ -16,7 +23,6 @@ body {
 body {
   font-size: 1.4rem;
   text-rendering: optimizeLegibility;
-  font-family: 'Anonymous Pro', monospace;
 }
 
 body,

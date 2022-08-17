@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Header } from '../../../src/components/Header/Header';
 
 describe('Header', () => {
@@ -10,8 +11,9 @@ describe('Header', () => {
 
   it('display menu button', () => {
     render(<Header />);
-    expect(screen.getByRole('button').textContent).toEqual(
-      'Open sidebar menu'
-    );
+
+    expect(
+      screen.getByRole('button', { name: 'Open sidebar menu' })
+    ).toBeInTheDocument();
   });
 });
