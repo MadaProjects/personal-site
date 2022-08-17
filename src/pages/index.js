@@ -4,8 +4,6 @@ import { Layout } from '../../src/components/Layout/Layout';
 import { Dots } from '../components/Dots/Dots';
 import { Typewriter } from '../components/Typewriter/Typewriter';
 import './Index.scss';
-import 'flowbite';
-import 'flowbite-react';
 
 const IndexPage = () => {
   const positions = [
