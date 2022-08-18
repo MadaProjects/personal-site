@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
 
 export const Header = ({ onDarkModeClick, onPauseClick }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
+
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleMenuClick = () => {
     if (openDrawer) {
@@ -15,11 +18,39 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
     }
   };
 
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
     <div className='z-40 relative'>
       <header
         data-testid='header'
-        className='header container mx-auto fixed top-0 left-0 right-0 py-4'>
+        className={` ${
+          show ? 'show' : 'hidden'
+        } header container mx-auto fixed top-0 left-0 right-0 py-4`}>
         <div className='flex justify-end'>
           <button
             onClick={onDarkModeClick}
@@ -169,7 +200,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='about-me'
+                to='../about-me'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -189,7 +220,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='education'
+                to='../education'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -210,7 +241,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             </li>
             <li>
               <Link
-                to='resume'
+                to='../resume'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -230,7 +261,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='portfolio'
+                to='../portfolio'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -250,7 +281,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='services'
+                to='../services'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
@@ -270,7 +301,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='contact'
+                to='../contact'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
                   className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
