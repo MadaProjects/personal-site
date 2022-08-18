@@ -1,139 +1,155 @@
 import * as React from 'react';
 import { Layout } from '../components/Layout/Layout';
 import {
+  SchoolCap,
+  WorkBriefcase,
+  ArrowsUp,
+  Flame,
+} from '../components/Icons/Icons';
+import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import './education.scss';
 
 const EducationPage = () => {
   return (
     <Layout>
-      <div data-testid='educationPage' className='relative'>
-        <div className='flex justify-center'>
-          <VerticalTimeline>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--work'
-              contentStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-              }}
-              contentArrowStyle={{
-                borderRight: '7px solid  rgb(33, 150, 243)',
-              }}
-              date='2011 - present'
-              iconStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-              }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Creative Director
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                Miami, FL
-              </h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--work'
-              date='2010 - 2011'
-              iconStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-              }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Art Director
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                San Francisco, CA
-              </h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, SEO,
-                Online Marketing
-              </p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--work'
-              date='2008 - 2010'
-              iconStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-              }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Web Designer
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                Los Angeles, CA
-              </h4>
-              <p>User Experience, Visual Design</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--work'
-              date='2006 - 2008'
-              iconStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-              }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Web Designer
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                San Francisco, CA
-              </h4>
-              <p>User Experience, Visual Design</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--education'
-              date='April 2013'
-              iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Content Marketing for Web, Mobile and Social Media
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                Online Course
-              </h4>
-              <p>Strategy, Social Media</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--education'
-              date='November 2012'
-              iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Agile Development Scrum Master
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                Certification
-              </h4>
-              <p>Creative Direction, User Experience, Visual Design</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className='vertical-timeline-element--education'
-              date='2002 - 2006'
-              iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-              icon={''}>
-              <h3 className='vertical-timeline-element-title'>
-                Bachelor of Science in Interactive Digital Media Visual
-                Imaging
-              </h3>
-              <h4 className='vertical-timeline-element-subtitle'>
-                Bachelor Degree
-              </h4>
-              <p>Creative Direction, Visual Design</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-              icon={''}
-            />
-          </VerticalTimeline>
+      <div className='container'>
+        <div data-testid='educationPage' className='relative'>
+          <div className='flex justify-center'>
+            <VerticalTimeline
+              className='!pt-20 pt-vertical-timeline'
+              lineColor={'#6e6e6e'}>
+              <VerticalTimelineElement
+                className='vertical-timeline-element--work'
+                date='Feb 2020 - Aug 2022'
+                icon={<WorkBriefcase />}>
+                <h3 className='vertical-timeline-element-title'>
+                  Web Developer
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  London, UK
+                </h4>
+                <p>User Experience, Visual Design</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--education'
+                date='Jun 2022'
+                iconStyle={{
+                  background: '#bcfd4c',
+                  color: 'black',
+                }}
+                icon={<Flame />}>
+                <h3 className='vertical-timeline-element-title'>Award</h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Award
+                </h4>
+                <p>User Experience, Visual Design</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--education'
+                date='Sep 2019 - Jun 2022'
+                iconStyle={{
+                  background: '#bcfd4c',
+                  color: 'black',
+                }}
+                icon={<SchoolCap />}>
+                <h3 className='vertical-timeline-element-title font-bold'>
+                  Tomas Bata University in Zlín
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Master's Degree in software engineering
+                </h4>
+                <p>Strategy, Social Media</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--work'
+                date='Dec 2018 - Dec 2019'
+                icon={<WorkBriefcase />}>
+                <h3 className='vertical-timeline-element-title'>
+                  Front-end Developer
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Brno, Czech Republic
+                </h4>
+                <p>User Experience, Visual Design</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--work'
+                date='Jan 2016 - Now 2018'
+                icon={<WorkBriefcase />}>
+                <h3 className='vertical-timeline-element-title'>
+                  Web Developer
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Brno, Czech Republic
+                </h4>
+                <p>User Experience, Visual Design</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--work'
+                date='Jul 2014 - Dec 2015'
+                icon={<WorkBriefcase />}>
+                <h3 className='vertical-timeline-element-title'>
+                  Junior Web Developer
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Brno, Czech Republic
+                </h4>
+                <p>User Experience, Visual Design</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--education'
+                date='Sep 2013 - Jun 2014'
+                iconStyle={{
+                  background: '#bcfd4c',
+                  color: 'black',
+                }}
+                icon={<SchoolCap />}>
+                <h3 className='vertical-timeline-element-title font-bold'>
+                  Masaryk university
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Completed 60 credits towards a Master's Degree in
+                  Computer Science
+                </h4>
+                <p>Strategy, Social Media</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                className='vertical-timeline-element--education'
+                date='Sep 2008 - Jun 2011'
+                iconStyle={{
+                  background: '#bcfd4c',
+                  color: 'black',
+                }}
+                icon={<SchoolCap />}>
+                <h3 className='vertical-timeline-element-title font-bold'>
+                  University of Ss. Cyril and Methodius
+                </h3>
+                <h4 className='vertical-timeline-element-subtitle'>
+                  Bachelor's degree in computer science
+                </h4>
+                <p>Strategy, Social Media</p>
+              </VerticalTimelineElement>
+
+              <VerticalTimelineElement
+                iconStyle={{
+                  background: '#bcfd4c',
+                  color: 'black',
+                }}
+                icon={<ArrowsUp />}
+              />
+            </VerticalTimeline>
+          </div>
         </div>
       </div>
     </Layout>

@@ -1,0 +1,97 @@
+.pt-vertical-timeline {
+  .vertical-timeline-element {
+    margin-bottom: 5em;
+
+    &--work {
+      .vertical-timeline-element-content {
+        background: transparent;
+        border: 2px solid #6e6e6e;
+        box-shadow: none;
+        box-shadow: transparent 0px 3px 0px;
+      }
+
+      .vertical-timeline-element-content-arrow {
+        border-right: 10px solid #6e6e6e;
+      }
+      .vertical-timeline-element-icon {
+        background-color: black;
+
+        svg {
+          color: white;
+        }
+      }
+    }
+
+    &--education {
+      .vertical-timeline-element-content {
+        background: transparent;
+        border: 2px solid #bcfd4c;
+        box-shadow: transparent 0px 3px 0px;
+      }
+
+      .vertical-timeline-element-content-arrow {
+        border-right: 10px solid #bcfd4c;
+      }
+    }
+  }
+
+  .vertical-timeline-element-date {
+    color: black;
+    opacity: 1;
+  }
+
+  .vertical-timeline-element-icon {
+    svg {
+      transform: translate(-50%, -50%);
+      margin: 0;
+      @media only screen and (min-width: 1170px) {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+.dark {
+  .pt-vertical-timeline {
+    &::before {
+      background: #bcfd4c !important;
+    }
+
+    .vertical-timeline-element {
+      &--work {
+        .vertical-timeline-element-content {
+          background: black;
+          border-color: transparent;
+          color: #bcfd4c;
+          box-shadow: rgb(188 253 76) 0px 3px 0px;
+        }
+
+        .vertical-timeline-element-content-arrow {
+          border-right: 10px solid black;
+        }
+
+        .vertical-timeline-element-icon {
+          background-color: black;
+        }
+      }
+
+      &--education {
+        .vertical-timeline-element-content {
+          background: transparent;
+          border-color: transparent;
+          background: #bcfd4c;
+          box-shadow: rgb(131 187 34) 0px 3px 0px;
+        }
+
+        .vertical-timeline-element-content-arrow {
+          border-right: 10px solid #bcfd4c;
+        }
+      }
+    }
+  }
+
+  .vertical-timeline-element-date {
+    color: white;
+  }
+}
