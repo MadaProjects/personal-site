@@ -1,0 +1,96 @@
+$widthvar: calc(100vw);
+
+#bubbles {
+  height: 100%;
+}
+#bubbles {
+  padding: 100px 0;
+}
+
+.bubble {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 200px;
+  position: absolute;
+}
+
+.x1 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x3 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x4 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x5 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x6 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x7 {
+  left: random($widthvar) + vw;
+  animation: moveclouds (random(25) + 5) + s linear infinite,
+    sideWays 5s ease-in-out infinite alternate;
+}
+
+.x8 {
+  margin-top: 200px;
+  margin-left: 200px;
+  animation: slideIn 2s linear;
+  transition: all;
+}
+
+.x8 {
+  margin-top: 200px;
+  margin-left: 200px;
+  animation: slideIn 2s linear;
+  transition: all;
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+
+@keyframes moveclouds {
+  0% {
+    top: -500px;
+  }
+  100% {
+    top: 100vh;
+  }
+}

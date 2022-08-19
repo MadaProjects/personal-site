@@ -4,7 +4,9 @@ import { Layout } from '../components/Layout/Layout';
 const PortfolioPage = () => {
   return (
     <Layout>
-      <div>Portfolio</div>
+      <div className='container mx-auto min-h-screen relative'>
+        Portfolio
+      </div>
     </Layout>
   );
 };

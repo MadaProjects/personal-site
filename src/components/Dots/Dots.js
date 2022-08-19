@@ -19,6 +19,7 @@ export const Dots = () => {
     <svg
       version='1.1'
       id='svg2'
+      data-testid='svgDots'
       xmlSpace='preserve'
       width='1000'
       height='750'
