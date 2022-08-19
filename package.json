@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --watch",
-    "test:coverage": "npm test -- --env=jsdom --coverage --watchAll"
+    "test:coverage": "npm test -- --env=jsdom --coverage --watchAll",
+    "build:tailwind": "tailwind build static/styles/index.css -o static/styles/tailwind.css"
   },
   "dependencies": {
     "@fontsource/anonymous-pro": "^4.5.8",

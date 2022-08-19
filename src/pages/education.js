@@ -16,7 +16,7 @@ import './education.scss';
 const EducationPage = () => {
   return (
     <Layout>
-      <div className='container'>
+      <div className='container mx-auto'>
         <div data-testid='educationPage' className='relative'>
           <div className='flex justify-center'>
             <VerticalTimeline

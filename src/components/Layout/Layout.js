@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 
 import '@fontsource/anonymous-pro';
 import '../../styles/global.css';
@@ -10,7 +10,7 @@ export const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [paused, setPaused] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
