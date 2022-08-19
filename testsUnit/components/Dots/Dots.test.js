@@ -8,10 +8,8 @@ describe('Dots', () => {
     expect(screen.getByTestId('svgDots')).toBeInTheDocument();
   });
 
-  /*
   it('render a svg', () => {
     render(<Dots />);
-    expect();
+    expect(screen.getByTestId('svgDots').tagName).toEqual('svg');
   });
-  */
 });
