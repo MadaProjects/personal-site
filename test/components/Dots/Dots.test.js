@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import TestRenderer from 'react-test-renderer';
-
 import { render, screen } from '@testing-library/react';
 import { Dots } from '../../../src/components/Dots/Dots';
 
