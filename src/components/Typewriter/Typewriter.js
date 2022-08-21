@@ -19,14 +19,9 @@ export const Typewriter = ({ staticText, test, dynamicText = [''] }) => {
       if (i > dynamicText[j].length + 50) {
         k--;
         if (k < 0) {
-          j++;
-          if (j >= dynamicText.length) {
-            j = 0;
-          }
-
+          j = j >= dynamicText.length - 1 ? 0 : ++j;
           i = -1;
           k = dynamicText[j].length;
-
           return;
         }
 
