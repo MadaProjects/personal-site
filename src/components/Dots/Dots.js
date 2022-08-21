@@ -24,7 +24,10 @@ export const Dots = () => {
       width='1000'
       height='750'
       viewBox='0 0 53.333332 40'
+      role='presentation'
       {...attributeElements}>
+      <title></title>
+      <description></description>
       <defs id='defs6' />
       <g
         id='g8'

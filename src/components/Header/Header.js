@@ -21,14 +21,11 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
       if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
         setShow(false);
       } else {
-        // if scroll up show the navbar
         setShow(true);
       }
 
-      // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
     }
   };
@@ -37,7 +34,6 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
 
-      // cleanup function
       return () => {
         window.removeEventListener('scroll', controlNavbar);
       };
@@ -119,6 +115,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
           aria-controls='drawer-navigation'
           onClick={handleMenuClick}
           className='text-gray-400 bg-transparent hover:bg-green hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'>
+          <span className='sr-only'>Close menu</span>
           <svg
             aria-hidden='true'
             className='w-5 h-5'
@@ -129,7 +126,6 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
               clipRule='evenodd'></path>
           </svg>
-          <span className='sr-only'>Close menu</span>
         </button>
         <div className='py-4 overflow-y-auto'>
           <div className='flex flex-col items-center mb-1'>
@@ -147,6 +143,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <a
               href='mailto:madapeterr@gmail.com'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>Email</span>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -163,6 +160,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <a
               href='tel:+421911222123'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>Phone number</span>
               <svg
                 className='w-5 h-5'
                 fill='none'
