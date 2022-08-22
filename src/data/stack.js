@@ -8,7 +8,7 @@ import vsCodeLogo from '../../src/images/logos/VSCode.png';
 import gatsbyLogo from '../../src/images/logos/Gatsby.png';
 import webpackLogo from '../../src/images/logos/webpack.png';
 import tddLogo from '../../src/images/logos/TDD.png';
-import sassLogo from '../../src/images/logos/SASS.png';
+import sassLogo from '../../src/images/logos/Sass.png';
 import reactLogo from '../../src/images/logos/React.png';
 import reactHooksLogo from '../../src/images/logos/ReactHooks2.png';
 import phpLogo from '../../src/images/logos/php.png';
@@ -25,7 +25,7 @@ import tailwindLogo from '../../src/images/logos/tailwindcss.svg';
 import herokuLogo from '../../src/images/logos/heroku2.png';
 import githubLogo from '../../src/images/logos/github.png';
 import graphQLLogo from '../../src/images/logos/graphQL.png';
-import slackLogo from '../../src/images/logos/slack_RGB.png';
+import slackLogo from '../../src/images/logos/Slack_RGB.png';
 import msTamsLogo from '../../src/images/logos/msTeams.svg';
 import vanilaJsLogo from '../../src/images/logos/vanila.png';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { SEO } from '../components/seo';
+import { SEO } from '../components/Seo';
 import { Layout } from '../components/Layout/Layout';
 import {
   ArrowsUp,
