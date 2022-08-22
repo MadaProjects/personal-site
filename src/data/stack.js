@@ -1,4 +1,4 @@
-import reactTestingLibrary from '../images/logos/reactTestingLibrary.png';
+import reactTestingLibrary from '../../src/images/logos/ReactTestingLibrary.png';
 import esLogo from '../images/logos/es6.jpg';
 import htmlLogo from '../images/logos/html5.png';
 import discordLogo from '../images/logos/discord1.png';
