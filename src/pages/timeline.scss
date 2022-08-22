@@ -74,6 +74,13 @@
         .vertical-timeline-element-icon {
           background-color: black;
         }
+
+        .vertical-timeline-element-date {
+          color: #bcfd4c;
+          @media only screen and (min-width: 1170px) {
+            color: white;
+          }
+        }
       }
 
       &--education {
@@ -92,6 +99,8 @@
   }
 
   .vertical-timeline-element-date {
-    color: white;
+    @media only screen and (min-width: 1170px) {
+      color: white;
+    }
   }
 }

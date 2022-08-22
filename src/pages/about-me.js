@@ -16,47 +16,52 @@ const AboutMePage = () => {
             <span className='absolute bottom-0 top-0 left-0 right-0 bg-black opacity-40'></span>
           </div>
           <div className='px-4 py-10 container mx-auto lg:w-1/2 lg:py-20 lg:px-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-items-center	lg:justify-center'>
-            <h1 className='text-3xl text-center font-bold dark:text-green'>
+            <h1 className='text-3xl lg:text-4xl text-center font-bold dark:text-green mb-4 lg-mb-6'>
               About me
             </h1>
             <div className='mt-2  dark:text-green'>
               <p className='mb-3'>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Sed convallis magna eu sem. Nullam sit amet magna in magna
-                gravida vehicula. Aliquam erat volutpat. Pellentesque arcu.
-                Etiam dictum tincidunt diam. Mauris elementum mauris vitae
-                tortor. Phasellus rhoncus. Phasellus et lorem id felis
-                nonummy placerat. Maecenas fermentum, sem in pharetra
-                pellentesque, velit turpis volutpat ante, in pharetra metus
-                odio a lectus. Ut tempus purus at lorem. Integer malesuada.
-                Phasellus rhoncus.
+                I am learning enthusiast Full Stack Developer with 8+ years
+                of experience in web development.
               </p>
               <p className='mb-3'>
-                Duis pulvinar. Proin mattis lacinia justo. Maecenas
-                sollicitudin. Fusce tellus. Maecenas fermentum, sem in
-                pharetra pellentesque, velit turpis volutpat ante, in
-                pharetra metus odio a lectus. Class aptent taciti sociosqu
-                ad litora torquent per conubia nostra, per inceptos
-                hymenaeos. Nulla pulvinar eleifend sem. Phasellus faucibus
-                molestie nisl. Pellentesque arcu. Integer lacinia.
-                Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy
-                ac, erat. Nullam rhoncus aliquam metus. Fusce tellus. Etiam
-                commodo dui eget wisi. Nam sed tellus id magna elementum
-                tincidunt. Nullam feugiat, turpis at pulvinar vulputate,
-                erat libero tristique tellus, nec bibendum odio risus sit
-                amet ante.
+                I had started my career as a professional Web Developer
+                after I moved to Brno (Czech Republic) and did not finish
+                my Master's degree in Software Engineering (I got cca 2/3
+                ECTS credits). I started working in 2014 as Junior Web
+                Developer in small Agency located in Brno. During my work
+                for this agency I fall in love with developing websites.
               </p>
-              <p>
-                Maecenas lorem. Nullam rhoncus aliquam metus. Aenean
-                fermentum risus id tortor. Quisque tincidunt scelerisque
-                libero. Nulla accumsan, elit sit amet varius semper, nulla
-                mauris mollis quam, tempor suscipit diam nulla vel leo.
-                Pellentesque arcu. Praesent id justo in neque elementum
-                ultrices. Aliquam erat volutpat. Donec quis nibh at felis
-                congue commodo. Integer malesuada. Pellentesque habitant
-                morbi tristique senectus et netus et malesuada fames ac
-                turpis egestas. Nunc tincidunt ante vitae massa. Quisque
-                tincidunt scelerisque libero.
+              <p className='mb-3'>
+                Throughout my work years in Brno I changed jobs so I have a
+                lot of experience with developing web applications from
+                front-end perspective and also from back-end perspective. I
+                mastered most of the technology and procedures necessary
+                for web development.
+              </p>
+              <p className='mb-3'>
+                After few years I decide that I want to be Full Stack
+                developer.
+              </p>
+              <p className='mb-3'>
+                In 2019 I started studying at Tomas Bata University in Zlín
+                (Czech Republic). After first semester I interrupted my
+                study and moved to London where I work as Web Developer for
+                CSL Website group. I stayed in London for one year and then
+                I moved back to Czech Republic because I want to finish my
+                Masters degree. I managed to balance my study and work and
+                finally, in 2022 I got my Master's degree in Information
+                Technology (Specialization Software Engineering).
+              </p>
+              <p className='mb-3'>
+                I am always looking for opportunities where I can use and
+                further develop my knowledge of JavaScript, React, TDD,
+                Clean code and functional programming.
+              </p>
+              <p className='mb-3'>
+                My plans for the future are to complete WAS (Web
+                Accessibility Specialist) certification and learn German
+                and Japanese.
               </p>
             </div>
           </div>

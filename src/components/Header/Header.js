@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import * as headerStyles from './Header.module.scss';
 import myImage from '../../images/peto.jpg';
+import myCV from '../../pdf/peterMadaCV.pdf';
 
 export const Header = ({ onDarkModeClick, onPauseClick }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -21,14 +22,11 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
       if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
         setShow(false);
       } else {
-        // if scroll up show the navbar
         setShow(true);
       }
 
-      // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
     }
   };
@@ -37,7 +35,6 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
 
-      // cleanup function
       return () => {
         window.removeEventListener('scroll', controlNavbar);
       };
@@ -119,6 +116,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
           aria-controls='drawer-navigation'
           onClick={handleMenuClick}
           className='text-gray-400 bg-transparent hover:bg-green hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'>
+          <span className='sr-only'>Close menu</span>
           <svg
             aria-hidden='true'
             className='w-5 h-5'
@@ -129,7 +127,6 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
               clipRule='evenodd'></path>
           </svg>
-          <span className='sr-only'>Close menu</span>
         </button>
         <div className='py-4 overflow-y-auto'>
           <div className='flex flex-col items-center mb-1'>
@@ -147,6 +144,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             <a
               href='mailto:madapeterr@gmail.com'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>Email</span>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -161,8 +159,9 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               </svg>
             </a>
             <a
-              href='tel:+421911222123'
+              href='tel:+420774031464'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>My czech phone number</span>
               <svg
                 className='w-5 h-5'
                 fill='none'
@@ -176,6 +175,43 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                   d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'></path>
               </svg>
             </a>
+            <a
+              href='tel:+447593408952'
+              className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>My UK phone number</span>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='w-5 h-5'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+                strokeWidth={2}>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                />
+              </svg>
+            </a>
+            <a
+              href='www.linkedin.com/in/peter-mada'
+              target='_blank'
+              className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
+              <span className='sr-only'>Peter Mada Linkedin profile</span>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+                strokeWidth={2}>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122'
+                />
+              </svg>
+            </a>
           </div>
           <ul className='space-y-2'>
             <li>
@@ -183,7 +219,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                 to='/'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -203,7 +239,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                 to='../about-me'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -220,71 +256,52 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
-                to='../education'
+                to='../timeline'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
-                  stroke='currentColor'
                   viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'>
-                  <path d='M12 14l9-5-9-5-9 5 9 5z'></path>
-                  <path d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'></path>
+                  stroke='currentColor'
+                  strokeWidth={2}>
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222'></path>
+                    d='M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2'
+                  />
                 </svg>
-                <span className='ml-3'>Education</span>
+                <span className='ml-3'>My Timeline</span>
               </Link>
             </li>
             <li>
-              <Link
-                to='../resume'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
+              <a
+                href={myCV}
+                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'
+                download>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
-                  stroke='currentColor'
                   viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'>
+                  stroke='currentColor'
+                  strokeWidth={2}>
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path>
+                    d='M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4'
+                  />
                 </svg>
                 <span className='ml-3'>Resume</span>
-              </Link>
+              </a>
             </li>
 
             <li>
               <Link
-                to='../portfolio'
+                to='../stack'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'>
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10'></path>
-                </svg>
-                <span className='ml-3'>Portfolio</span>
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to='../services'
-                className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
-                <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -295,7 +312,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                     strokeWidth='2'
                     d='M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01'></path>
                 </svg>
-                <span className='ml-3'>Services</span>
+                <span className='ml-3'>My stack</span>
               </Link>
             </li>
 
@@ -304,7 +321,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
                 to='../contact'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
-                  className='w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                  className='w-6 h-6 text-gray-500  transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'

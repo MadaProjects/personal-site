@@ -19,11 +19,15 @@ export const Dots = () => {
     <svg
       version='1.1'
       id='svg2'
+      data-testid='svgDots'
       xmlSpace='preserve'
       width='1000'
       height='750'
       viewBox='0 0 53.333332 40'
+      role='presentation'
       {...attributeElements}>
+      <title></title>
+      <description></description>
       <defs id='defs6' />
       <g
         id='g8'
