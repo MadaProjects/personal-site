@@ -21,8 +21,8 @@ const AboutMePage = () => {
             </h1>
             <div className='mt-2  dark:text-green'>
               <p className='mb-3'>
-                I am learning enthusiast Full Stack Developer with 8+ years
-                of experience in web development.
+                Enthusiastic for learning Full Stack Developer with 8+
+                years of experience in web development.
               </p>
               <p className='mb-3'>
                 I had started my career as a professional Web Developer

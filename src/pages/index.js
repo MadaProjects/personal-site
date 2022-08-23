@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Layout } from '../../src/components/Layout/Layout';
 import { Dots } from '../components/Dots/Dots';
 import { Typewriter } from '../components/Typewriter/Typewriter';
-import { SEO } from '../components/seo';
+import { SEO } from '../components/Seo';
 import './Index.scss';
 
 const IndexPage = () => {
