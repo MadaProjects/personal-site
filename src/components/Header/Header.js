@@ -194,7 +194,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               </svg>
             </a>
             <a
-              href='www.linkedin.com/in/peter-mada'
+              href='https://linkedin.com/in/peter-mada'
               target='_blank'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <span className='sr-only'>Peter Mada Linkedin profile</span>
