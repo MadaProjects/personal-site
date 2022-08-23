@@ -8,7 +8,6 @@ import { Header } from '../Header/Header';
 
 export const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const [paused, setPaused] = useState(false);
 
   useLayoutEffect(() => {
     if (
@@ -22,12 +21,6 @@ export const Layout = ({ children }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (localStorage.paused) {
-      setPaused(true);
-    }
-  }, []);
-
   const handleSetDarkMode = () => {
     if (darkMode) {
       localStorage.theme = 'light';
@@ -38,27 +31,16 @@ export const Layout = ({ children }) => {
     }
   };
 
-  const handlePauseClick = () => {
-    if (paused) {
-      localStorage.setItem('paused', false);
-      setPaused(false);
-    } else {
-      localStorage.setItem('paused', true);
-      setPaused(true);
-    }
-  };
-
   const darkModeClass = darkMode ? 'dark bg-primary' : 'bg-white';
-  const pausedClass = paused ? 'paused' : '';
-  const mainClass = `${darkModeClass} ${pausedClass}`;
+  const mainClass = `${darkModeClass}`;
 
   return (
-    <main className={mainClass}>
-      <Header
-        onDarkModeClick={handleSetDarkMode}
-        onPauseClick={handlePauseClick}
-      />
+    <div className={mainClass} data-testid='layoutWrapper'>
+      <a className='sr-only' href='#main'>
+        Skip to Main Content
+      </a>
+      <Header onDarkModeClick={handleSetDarkMode} />
       {children}
-    </main>
+    </div>
   );
 };
