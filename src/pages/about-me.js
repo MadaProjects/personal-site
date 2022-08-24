@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Layout } from '../components/Layout/Layout';
-import codeImg from '../../src/images/code.jpg';
+import { StaticImage } from 'gatsby-plugin-image';
+import { Seo } from '../components/Seo';
 
 const AboutMePage = () => {
   return (
@@ -8,9 +9,12 @@ const AboutMePage = () => {
       <div className=' min-h-screen mx-auto pt-20 lg:pt-0'>
         <div className='flex flex-col lg:flex-row'>
           <div className='relative h-20 lg:w-1/2 lg:h-auto lg:min-h-screen'>
-            <img
+            <StaticImage
               className='object-cover h-full w-full absolute bottom-0 top-0 left-0 right-0'
-              src={codeImg}
+              src='../../src/images/code.webp'
+              alt=''
+              placeholder='blurred'
+              sizes='(min-width: 1024px) 100vw 80px, 50vw 100vh'
             />
 
             <span className='absolute bottom-0 top-0 left-0 right-0 bg-black opacity-40'></span>
@@ -19,7 +23,7 @@ const AboutMePage = () => {
             <h1 className='text-3xl lg:text-4xl text-center font-bold dark:text-green mb-4 lg-mb-6'>
               About me
             </h1>
-            <div className='mt-2  dark:text-green'>
+            <div className='mt-2 dark:text-white'>
               <p className='mb-3'>
                 Enthusiastic for learning Full Stack Developer with 8+
                 years of experience in web development.
@@ -72,3 +76,7 @@ const AboutMePage = () => {
 };
 
 export default AboutMePage;
+
+export const Head = () => (
+  <Seo description='About Peter Mada - Personal website of full stack developer Peter Mada' />
+);

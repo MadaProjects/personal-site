@@ -4,7 +4,6 @@ const React = require('react');
 exports.onRenderBody = ({ setBodyAttributes, setHtmlAttributes }) => {
   setHtmlAttributes({ lang: 'en' });
   setBodyAttributes({
-    className: 'no-js',
     style: {
       visibility: 'hidden',
       opacity: '0',

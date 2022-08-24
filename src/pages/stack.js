@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Layout } from '../components/Layout/Layout';
+import { Seo } from '../components/Seo';
 import { stack } from '../data/stack';
 import './stack.scss';
 
@@ -17,15 +18,19 @@ const StackPage = () => {
 
   return (
     <Layout>
-      <div className='container mx-auto min-h-screen pt-20 pb-10  px-4'>
+      <main
+        data-testid='stackPage'
+        className='container mx-auto min-h-screen pt-20 pb-10  px-4'>
         <h1 className='mb-6 text-3xl text-center font-bold dark:text-green'>
           My favorite stack
         </h1>
         <div className='flex flex-wrap justify-center justify-items-center'>
           {suffledLogos.map((tech, i) => (
             <a
+              key={i}
               href={tech.url}
               target='_blank'
+              rel='noreferrer nofollow'
               className='group  w-1/4 md:w-1/6 mx-4 lg:mx-6 my-6 lg:my-10 max-h-12 lg:max-h-16 min-h-[50px] '>
               <img
                 src={tech.img}
@@ -35,9 +40,13 @@ const StackPage = () => {
             </a>
           ))}
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };
 
 export default StackPage;
+
+export const Head = () => (
+  <Seo description='My favorite stack - JavaScript, React, TDD, Clean Code' />
+);

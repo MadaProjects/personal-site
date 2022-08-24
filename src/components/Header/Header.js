@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import * as headerStyles from './Header.module.scss';
-import myImage from '../../images/peto.jpg';
 import myCV from '../../pdf/peterMadaCV.pdf';
 
 export const Header = ({ onDarkModeClick, onPauseClick }) => {
@@ -39,6 +39,8 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
         window.removeEventListener('scroll', controlNavbar);
       };
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
   return (
@@ -108,12 +110,13 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
         className={`${
           openDrawer ? 'transform-none' : '-translate-x-full'
         } fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-primary transition-transform left-0 top-0 `}
-        tabIndex='-1'
-        aria-labelledby='drawer-navigation-label'>
+        aria-labelledby='drawer-navigation-label'
+        aria-hidden={openDrawer ? 'false' : 'true'}>
         <button
           type='button'
           data-drawer-dismiss='drawer-navigation'
           aria-controls='drawer-navigation'
+          tabIndex={openDrawer ? '0' : '-1'}
           onClick={handleMenuClick}
           className='text-gray-400 bg-transparent hover:bg-green hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'>
           <span className='sr-only'>Close menu</span>
@@ -130,18 +133,21 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
         </button>
         <div className='py-4 overflow-y-auto'>
           <div className='flex flex-col items-center mb-1'>
-            <img
+            <StaticImage
               className='p-1 w-30 h-30 mb-3 rounded-full ring-2 ring-green dark:ring-white'
-              src={myImage}
-              alt='Bordered avatar'
+              src='../../images/peto.webp'
+              alt='Ing. Peter Mada'
+              width={140}
+              height={140}
             />
 
-            <span className='self-center text-xl font-semibold whitespace-nowrap text-primary dark:text-white'>
+            <span className='self-center text-xl xl:text-2xl font-semibold whitespace-nowrap text-primary dark:text-green'>
               Peter Mada
             </span>
           </div>
           <div className={`social flex items-center justify-center mb-5`}>
             <a
+              tabIndex={openDrawer ? '0' : '-1'}
               href='mailto:madapeterr@gmail.com'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <span className='sr-only'>Email</span>
@@ -159,6 +165,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               </svg>
             </a>
             <a
+              tabIndex={openDrawer ? '0' : '-1'}
               href='tel:+420774031464'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <span className='sr-only'>My czech phone number</span>
@@ -176,6 +183,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               </svg>
             </a>
             <a
+              tabIndex={openDrawer ? '0' : '-1'}
               href='tel:+447593408952'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <span className='sr-only'>My UK phone number</span>
@@ -194,8 +202,10 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
               </svg>
             </a>
             <a
+              tabIndex={openDrawer ? '0' : '-1'}
               href='https://linkedin.com/in/peter-mada'
               target='_blank'
+              rel='noreferrer nofollow'
               className='mx-1 rounded-lg p-2 hover:bg-green dark:hover:bg-transparent'>
               <span className='sr-only'>Peter Mada Linkedin profile</span>
               <svg
@@ -216,6 +226,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
           <ul className='space-y-2'>
             <li>
               <Link
+                tabIndex={openDrawer ? '0' : '-1'}
                 to='/'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
@@ -236,6 +247,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
+                tabIndex={openDrawer ? '0' : '-1'}
                 to='../about-me'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
@@ -256,6 +268,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
+                tabIndex={openDrawer ? '0' : '-1'}
                 to='../timeline'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
@@ -276,6 +289,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
             </li>
             <li>
               <a
+                tabIndex={openDrawer ? '0' : '-1'}
                 href={myCV}
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'
                 download>
@@ -298,6 +312,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
+                tabIndex={openDrawer ? '0' : '-1'}
                 to='../stack'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
@@ -318,6 +333,7 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
 
             <li>
               <Link
+                tabIndex={openDrawer ? '0' : '-1'}
                 to='../contact'
                 className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-gray-700'>
                 <svg
@@ -340,9 +356,14 @@ export const Header = ({ onDarkModeClick, onPauseClick }) => {
       </div>
       <div
         onClick={handleMenuClick}
-        className={`${
+        onKeyDown={handleMenuClick}
+        role='button'
+        tabIndex={openDrawer ? '0' : '-1'}
+        className={` ${
           openDrawer ? 'block' : 'hidden'
-        } bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30`}></div>
+        } bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30`}>
+        <span className='sr-only'>Background overlay for open menu</span>
+      </div>
     </div>
   );
 };
