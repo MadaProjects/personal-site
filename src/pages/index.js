@@ -20,7 +20,7 @@ const IndexPage = () => {
       <div
         data-testid='indexPage'
         className='indexWrap relative overflow-hidden'>
-        <main className='flex justify-center h-screen'>
+        <main className='flex justify-center h-screen' id='main'>
           <div className='mt-40 2xl:mt-60 relative'>
             <h1 className='name mb-7 text-5xl md:text-7xl md:tracking-wider font-bold text-primary dark:text-white mb-3'>
               Peter Mad<span className='fallingLetter'>a</span>

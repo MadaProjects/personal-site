@@ -19,6 +19,7 @@ const StackPage = () => {
   return (
     <Layout>
       <main
+        id='main'
         data-testid='stackPage'
         className='container mx-auto min-h-screen pt-20 pb-10  px-4'>
         <h1 className='mb-6 text-3xl text-center font-bold dark:text-green'>

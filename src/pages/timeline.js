@@ -17,7 +17,7 @@ import './timeline.scss';
 const TimelinePage = () => {
   return (
     <Layout>
-      <div className='container mx-auto'>
+      <div className='container mx-auto' id='main'>
         <div data-testid='timelinePage' className='relative'>
           <div className='flex justify-center'>
             <VerticalTimeline

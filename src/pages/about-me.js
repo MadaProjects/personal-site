@@ -6,7 +6,7 @@ import { Seo } from '../components/Seo';
 const AboutMePage = () => {
   return (
     <Layout>
-      <div className=' min-h-screen mx-auto pt-20 lg:pt-0'>
+      <div className=' min-h-screen mx-auto pt-20 lg:pt-0' id='main'>
         <div className='flex flex-col lg:flex-row'>
           <div className='relative h-20 lg:w-1/2 lg:h-auto lg:min-h-screen'>
             <StaticImage
