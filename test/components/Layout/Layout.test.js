@@ -4,6 +4,10 @@ import '../../../__mocks__/matchMedia';
 import { Layout } from '../../../src/components/Layout/Layout';
 
 describe('Layout', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+  });
+
   it('render component', () => {
     render(<Layout />);
     expect(screen.getByTestId('layoutWrapper')).toBeInTheDocument();

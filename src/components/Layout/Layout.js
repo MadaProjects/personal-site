@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 import '@fontsource/anonymous-pro';
 import '../../styles/global.css';

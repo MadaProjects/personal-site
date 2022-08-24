@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Layout } from '../components/Layout/Layout';
+import { Seo } from '../components/Seo';
 import {
   SchoolCap,
   WorkBriefcase,
@@ -174,3 +175,7 @@ const TimelinePage = () => {
 };
 
 export default TimelinePage;
+
+export const Head = () => (
+  <Seo description='Timeline of work and study history of Peter Mada - Personal website of full stack developer Peter Mada' />
+);

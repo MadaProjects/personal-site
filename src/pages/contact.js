@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { useForm } from 'react-hook-form';
-import { SEO } from '../components/Seo';
+import { Seo } from '../components/Seo';
 import { Layout } from '../components/Layout/Layout';
 import {
   ArrowsUp,
   Phone,
   Email,
-  Globe,
   GitHub,
   Discord,
   Teams,
@@ -87,6 +85,7 @@ const ContactPage = () => {
                 <a
                   href='https://linkedin.com/in/peter-mada'
                   target='_blank'
+                  rel='noreferrer nofollow'
                   className='mt-2 block hover:underline'>
                   Peter Mada
                 </a>
@@ -101,6 +100,7 @@ const ContactPage = () => {
 
                 <a
                   target='_blank'
+                  rel='noreferrer nofollow'
                   href='https://discordapp.com/users/PeterMada#4058/'
                   className='mt-2 block hover:underline'>
                   PeterMada#4058
@@ -121,6 +121,7 @@ const ContactPage = () => {
                 <a
                   href='https://teams.microsoft.com/l/chat/0/0?users=madapeterr@gmail.com '
                   target='_blank'
+                  rel='noreferrer nofollow'
                   className='mt-2 block hover:underline'>
                   Peter Mada
                 </a>
@@ -136,6 +137,7 @@ const ContactPage = () => {
                 <a
                   href='https://github.com/PeterMada'
                   target='_blank'
+                  rel='noreferrer nofollow'
                   className='mt-2 block hover:underline'>
                   Peter Mada
                 </a>
@@ -158,76 +160,6 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-export const Head = () => <SEO />;
-
-const form = (
-  <div>
-    <form className='w-full max-w-lg mx-auto'>
-      <div className='flex flex-wrap -mx-3 mb-6'>
-        <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-          <label
-            className='block uppercase tracking-wide text-black dark:text-green text-base mb-2'
-            htmlFor='grid-first-name'>
-            First Name
-          </label>
-          <input
-            className='appearance-none block w-full bg-white dark:bg-black text-black dark:text-green border border-black dark:border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none dark:focus:ring-green'
-            id='grid-first-name'
-            type='text'
-          />
-          <p className='text-red-500 text-xs italic hidden'>
-            Please fill out this field.
-          </p>
-        </div>
-        <div className='w-full md:w-1/2 px-3'>
-          <label
-            className='block uppercase tracking-wide text-black dark:text-green text-base mb-2'
-            htmlFor='grid-last-name'>
-            Last Name
-          </label>
-          <input
-            className='appearance-none block w-full bg-white dark:bg-black text-black dark:text-green border border-black dark:border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none dark:focus:ring-green'
-            id='grid-last-name'
-            type='text'
-          />
-        </div>
-      </div>
-      <div className='flex flex-wrap -mx-3 mb-6'>
-        <div className='w-full px-3'>
-          <label
-            className='block uppercase tracking-wide text-black dark:text-green text-base mb-2'
-            htmlFor='grid-password'>
-            E-mail
-          </label>
-          <input
-            className='appearance-none block w-full bg-white dark:bg-black text-black dark:text-green border border-black dark:border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none dark:focus:ring-green'
-            id='email'
-            type='email'
-          />
-        </div>
-      </div>
-      <div className='flex flex-wrap -mx-3 mb-6'>
-        <div className='w-full px-3'>
-          <label
-            className='block uppercase tracking-wide text-black dark:text-green text-base mb-2'
-            htmlFor='grid-password'>
-            Message
-          </label>
-          <textarea
-            className='min-h-[15rem] appearance-none block w-full bg-white dark:bg-black text-black dark:text-green border border-black dark:border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none dark:focus:ring-green'
-            id='message'></textarea>
-          <p className='text-gray-600 text-xs italic'></p>
-        </div>
-      </div>
-      <div className='flex justify-end'>
-        <div className='md:w-auto'>
-          <input
-            className='shadow bg-black dark:bg-green hover:bg-green dark:hover:bg-white dark:border-2 dark:border-green  text-white dark:text-black  hover:text-black focus:outline-none focus:ring focus:ring-blue-600 font-bold py-2 px-6 rounded'
-            type='submit'
-            title='Send'
-          />
-        </div>
-      </div>
-    </form>
-  </div>
+export const Head = () => (
+  <Seo description='Contact me - Personal website of full stack developer Peter Mada' />
 );

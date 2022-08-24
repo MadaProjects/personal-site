@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import { Layout } from '../components/Layout/Layout';
 import { Dots } from '../components/Dots/Dots';
+import { Seo } from '../components/Seo';
 
 const NotFoundPage = () => {
   return (
@@ -27,3 +27,5 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
+
+export const Head = () => <Seo description='404 - page not found' />;

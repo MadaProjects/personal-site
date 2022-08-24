@@ -25,14 +25,14 @@
     "flowbite-react": "^0.1.8",
     "gatsby": "^4.20.0",
     "gatsby-plugin-google-analytics": "^4.20.0",
-    "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-netlify": "^5.0.1",
     "gatsby-plugin-sass": "^5.20.0",
-    "gatsby-plugin-sharp": "^4.20.0",
+    "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-plugin-sitemap": "^5.20.0",
-    "gatsby-source-filesystem": "^4.20.0",
-    "gatsby-transformer-sharp": "^4.20.0",
+    "gatsby-source-filesystem": "^4.21.1",
+    "gatsby-transformer-sharp": "^4.21.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.34.2",
@@ -69,7 +69,8 @@
       "@fontsource": "<rootDir>/__mocks__/styleMock.js"
     },
     "testPathIgnorePatterns": [
-      "<rootDir>/cypress/"
+      "<rootDir>/cypress/",
+      "<rootDir>/node_modules/"
     ]
   }
 }

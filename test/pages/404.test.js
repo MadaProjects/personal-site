@@ -4,6 +4,10 @@ import '../../__mocks__/matchMedia';
 import NotFoundPage from '../../src/pages/404';
 
 describe('404', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+  });
+
   it('render a page', () => {
     render(<NotFoundPage />);
     expect(screen.getByTestId('pageNotFound')).toBeInTheDocument();
